@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace Homework_Assignment_2
 
         Random random = new Random();
         int dice,positionX, positionY, playerPoints = 1;
+        Boolean StopDice=true;
         public Form1()
         {
             InitializeComponent();
@@ -87,12 +89,22 @@ namespace Homework_Assignment_2
             check.Text = "position : "+playerPoints +"\r\ndice : "+dice+ "\r\nX: " + player.Location.X + ", Y: " + player.Location.Y;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            dice = random.Next(1, 7); 
-            string imagePath = Path.Combine(Application.StartupPath, "dice"+dice+".jpg");
-            imgOutput.Image = Image.FromFile(imagePath);
-            walk(sender, e);
+            StopDice = !StopDice;
+            check.Text = StopDice.ToString();
+            if (StopDice)
+            {
+                walk(sender, e);
+                MessageBox.Show("hi");
+            }
+            while (!StopDice)
+            {
+                dice = random.Next(1, 7); 
+                string imagePath = Path.Combine(Application.StartupPath, "dice"+dice+".jpg");
+                imgOutput.Image = Image.FromFile(imagePath);
+                await Task.Delay(100);
+            }
         }
     }
 }
