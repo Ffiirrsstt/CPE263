@@ -33,8 +33,7 @@
             this.player = new System.Windows.Forms.PictureBox();
             this.txtOutput = new System.Windows.Forms.GroupBox();
             this.imgOutput = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.check = new System.Windows.Forms.Label();
+            this.btnRoll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.txtOutput.SuspendLayout();
@@ -70,7 +69,6 @@
             this.txtOutput.Size = new System.Drawing.Size(303, 253);
             this.txtOutput.TabIndex = 2;
             this.txtOutput.TabStop = false;
-            this.txtOutput.Text = "ผลลัพธ์";
             // 
             // imgOutput
             // 
@@ -82,33 +80,23 @@
             this.imgOutput.TabIndex = 0;
             this.imgOutput.TabStop = false;
             // 
-            // button1
+            // btnRoll
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(1188, 394);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(303, 91);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "คลิกเพื่อทอยลูกเต๋า";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // check
-            // 
-            this.check.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.check.Location = new System.Drawing.Point(1244, 39);
-            this.check.Name = "check";
-            this.check.Size = new System.Drawing.Size(258, 309);
-            this.check.TabIndex = 4;
-            this.check.Text = "label1";
+            this.btnRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnRoll.Location = new System.Drawing.Point(1188, 394);
+            this.btnRoll.Name = "btnRoll";
+            this.btnRoll.Size = new System.Drawing.Size(303, 91);
+            this.btnRoll.TabIndex = 3;
+            this.btnRoll.Text = "คลิกเพื่อทอยลูกเต๋า";
+            this.btnRoll.UseVisualStyleBackColor = true;
+            this.btnRoll.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 858);
-            this.Controls.Add(this.check);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pictureBox1);
@@ -129,8 +117,7 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.GroupBox txtOutput;
         private System.Windows.Forms.PictureBox imgOutput;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label check;
+        private System.Windows.Forms.Button btnRoll;
     }
 }
 

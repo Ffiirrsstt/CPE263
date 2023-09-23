@@ -21,16 +21,6 @@ namespace Homework_Assignment_2
         public Form1()
         {
             InitializeComponent();
-            /*check.Text = "X: " + player.Location.X + ", Y: " + player.Location.Y
-            +"\r\nX: " + pictureBox2.Location.X + ", Y: " + pictureBox2.Location.Y
-            + "\r\nX: " + pictureBox3.Location.X + ", Y: " + pictureBox3.Location.Y
-            + "\r\nX: " + pictureBox4.Location.X + ", Y: " + pictureBox4.Location.Y
-            + "\r\nX: " + pictureBox5.Location.X + ", Y: " + pictureBox5.Location.Y
-            + "\r\nX: " + pictureBox6.Location.X + ", Y: " + pictureBox6.Location.Y
-            + "\r\nX: " + pictureBox7.Location.X + ", Y: " + pictureBox7.Location.Y
-            + "\r\nX: " + pictureBox8.Location.X + ", Y: " + pictureBox8.Location.Y
-            + "\r\nX: " + pictureBox9.Location.X + ", Y: " + pictureBox9.Location.Y
-            + "\r\nX: " + pictureBox10.Location.X + ", Y: " + pictureBox10.Location.Y;*/
         }
 
         private void calculateYPosition(object sender, EventArgs e)
@@ -73,6 +63,22 @@ namespace Homework_Assignment_2
                 positionX = 20 + (86 * (10 - (playerPoints % 10)));
         }
 
+        private async void slider(object sender, EventArgs e)
+        {
+            int[,] numberSlider = { { 2, 23 }, { 6, 45 }, { 20, 59 }, { 52, 72 }, { 57, 96 }, { 71, 92 }                //ขึ้นบันได
+                                    ,{ 43, 17 }, { 50, 5 }, {56 ,8  }, { 73, 15}, { 84,58 }, { 87,49 }, {98 ,40 }};     //ลงสไลด์เดอร์งู
+            for (int i = 0; i < numberSlider.GetLength(0); i++)
+            {
+                if (playerPoints == numberSlider[i, 0])
+                {
+                    await Task.Delay(300);
+                    playerPoints = numberSlider[i, 1];
+                    walking(sender, e);
+                    break;
+                }
+            }
+        }
+
         private void calculateplayerPoints(object sender, EventArgs e)
         {
             playerPoints += dice;
@@ -80,24 +86,36 @@ namespace Homework_Assignment_2
                 playerPoints = 100 - (playerPoints % 100);
         }
 
-        private void walk(object sender, EventArgs e)
+        private void walking(object sender, EventArgs e)
         {
-            calculateplayerPoints(sender, e);
             calculateXPosition(sender, e);
             calculateYPosition(sender, e);
             player.Location = new Point(positionX, positionY);
-            check.Text = "position : "+playerPoints +"\r\ndice : "+dice+ "\r\nX: " + player.Location.X + ", Y: " + player.Location.Y;
+        }
+
+        private void walkRUN(object sender, EventArgs e)
+        {
+            calculateplayerPoints(sender, e);
+            walking(sender, e);
+            slider(sender, e);
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
             StopDice = !StopDice;
-            check.Text = StopDice.ToString();
             if (StopDice)
             {
-                walk(sender, e);
-                MessageBox.Show("hi");
+                btnRoll.Enabled = false;
+                walkRUN(sender, e);
+                txtOutput.Text = "ผลลัพธ์ของลูกเต๋า";
+                btnRoll.Text = "คลิกเพื่อทอยลูกเต๋า";
+                btnRoll.Enabled = true;
             }
+            else
+            {
+                btnRoll.Text = "คลิกเพื่อหยุดลูกเต๋า";
+                txtOutput.Text = "กำลังทำการสุ่มลูกเต๋า";
+            }    
             while (!StopDice)
             {
                 dice = random.Next(1, 7); 
