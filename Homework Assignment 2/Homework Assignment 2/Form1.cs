@@ -55,18 +55,33 @@ namespace Homework_Assignment_2
                 positionY = 10;
         }
 
-        private void walk(object sender, EventArgs e)
+        private void calculateXPosition(object sender, EventArgs e)
         {
-            playerPoints += dice;
-            if ((playerPoints >= 1 && playerPoints <= 10) || (playerPoints >= 21 && playerPoints <= 30)||
+            if ((playerPoints >= 1 && playerPoints <= 10) || (playerPoints >= 21 && playerPoints <= 30) ||
                 (playerPoints >= 41 && playerPoints <= 50) || (playerPoints >= 61 && playerPoints <= 70) ||
                 (playerPoints >= 81 && playerPoints <= 90))
-                if(playerPoints % 10==0)
+                if (playerPoints % 10 == 0)
                     positionX = 795;
                 else
-                    positionX = 20 + (86*((playerPoints%10) - 1));
+                    positionX = 20 + (86 * ((playerPoints % 10) - 1));
             else
-                positionX = 20 + (86 * (10-(playerPoints % 10)));
+                if (playerPoints % 10 == 0)
+                positionX = 20;
+            else
+                positionX = 20 + (86 * (10 - (playerPoints % 10)));
+        }
+
+        private void calculateplayerPoints(object sender, EventArgs e)
+        {
+            playerPoints += dice;
+            if (playerPoints > 100)
+                playerPoints = 100 - (playerPoints % 100);
+        }
+
+        private void walk(object sender, EventArgs e)
+        {
+            calculateplayerPoints(sender, e);
+            calculateXPosition(sender, e);
             calculateYPosition(sender, e);
             player.Location = new Point(positionX, positionY);
             check.Text = "position : "+playerPoints +"\r\ndice : "+dice+ "\r\nX: " + player.Location.X + ", Y: " + player.Location.Y;
