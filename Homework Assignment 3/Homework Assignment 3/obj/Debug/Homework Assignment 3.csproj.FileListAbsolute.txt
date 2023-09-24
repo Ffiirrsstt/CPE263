@@ -1,0 +1,10 @@
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\bin\Debug\Homework Assignment 3.exe.config
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\bin\Debug\Homework Assignment 3.exe
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\bin\Debug\Homework Assignment 3.pdb
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework Assignment 3.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework_Assignment_3.Form1.resources
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework_Assignment_3.Properties.Resources.resources
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework Assignment 3.csproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework Assignment 3.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework Assignment 3.exe
+C:\Users\LENOVO\Desktop\GitHub\First-s_iPad_Store\CPE263\Homework Assignment 3\Homework Assignment 3\obj\Debug\Homework Assignment 3.pdb
