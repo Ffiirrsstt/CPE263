@@ -34,6 +34,7 @@
             this.txtOutput = new System.Windows.Forms.GroupBox();
             this.imgOutput = new System.Windows.Forms.PictureBox();
             this.btnRoll = new System.Windows.Forms.Button();
+            this.dataTxtOut = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.txtOutput.SuspendLayout();
@@ -89,25 +90,38 @@
             this.btnRoll.TabIndex = 3;
             this.btnRoll.Text = "คลิกเพื่อทอยลูกเต๋า";
             this.btnRoll.UseVisualStyleBackColor = true;
-            this.btnRoll.Click += new System.EventHandler(this.button1_Click);
+            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
+            // 
+            // dataTxtOut
+            // 
+            this.dataTxtOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dataTxtOut.Location = new System.Drawing.Point(1188, 55);
+            this.dataTxtOut.Multiline = true;
+            this.dataTxtOut.Name = "dataTxtOut";
+            this.dataTxtOut.ReadOnly = true;
+            this.dataTxtOut.Size = new System.Drawing.Size(303, 270);
+            this.dataTxtOut.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 858);
+            this.Controls.Add(this.dataTxtOut);
             this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "เกมบันไดงู";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.txtOutput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgOutput)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,6 +132,7 @@
         private System.Windows.Forms.GroupBox txtOutput;
         private System.Windows.Forms.PictureBox imgOutput;
         private System.Windows.Forms.Button btnRoll;
+        private System.Windows.Forms.TextBox dataTxtOut;
     }
 }
 

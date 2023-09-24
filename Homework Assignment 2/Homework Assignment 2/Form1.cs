@@ -23,6 +23,14 @@ namespace Homework_Assignment_2
             InitializeComponent();
         }
 
+        private void txtChange(object sender, EventArgs e)
+        {
+            if(playerPoints==100)
+                dataTxtOut.Text = "เกมจบลงแล้ว ขอแสดงความยินดี! คุณได้เข้าเส้นชัย!!!";
+            else
+                dataTxtOut.Text = "ผู้เล่นอยู่ ณ ตำแหน่ง : "+ playerPoints + "\r\nผลการทอยลูกเต๋า : "+dice;
+        }
+
         private void calculateYPosition(object sender, EventArgs e)
         {
             if (playerPoints >= 1 && playerPoints <= 10)
@@ -91,6 +99,7 @@ namespace Homework_Assignment_2
             calculateXPosition(sender, e);
             calculateYPosition(sender, e);
             player.Location = new Point(positionX, positionY);
+            txtChange(sender, e);
         }
 
         private void walkRUN(object sender, EventArgs e)
@@ -100,7 +109,11 @@ namespace Homework_Assignment_2
             slider(sender, e);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private async void btnRoll_Click(object sender, EventArgs e)
         {
             StopDice = !StopDice;
             if (StopDice)
@@ -115,11 +128,11 @@ namespace Homework_Assignment_2
             {
                 btnRoll.Text = "คลิกเพื่อหยุดลูกเต๋า";
                 txtOutput.Text = "กำลังทำการสุ่มลูกเต๋า";
-            }    
+            }
             while (!StopDice)
             {
-                dice = random.Next(1, 7); 
-                string imagePath = Path.Combine(Application.StartupPath, "dice"+dice+".jpg");
+                dice = random.Next(1, 7);
+                string imagePath = Path.Combine(Application.StartupPath, "dice" + dice + ".jpg");
                 imgOutput.Image = Image.FromFile(imagePath);
                 await Task.Delay(100);
             }
